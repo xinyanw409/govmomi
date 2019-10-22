@@ -1,11 +1,11 @@
 package main
 
 import (
+	"../../gvddk/gDiskLib"
+	"../../gvddk/gvddk-high"
 	"fmt"
-	"testing"
 	"github.com/sirupsen/logrus"
-	"github.com/vmware/govmomi/gvddk/gDiskLib"
-	"github.com/vmware/govmomi/gvddk/gvddk-high"
+	"testing"
 )
 
 func Test(t *testing.T) {
@@ -55,15 +55,6 @@ func Test(t *testing.T) {
 	fmt.Printf("Read byte n = %d\n", n2)
 	fmt.Println(buffer2)
 	fmt.Println(err5)
-
-	//// ReadAt
-	//fmt.Printf("ReadAt test\n")
-	//buf2 := make([]byte, gDiskLib.VIXDISKLIB_SECTOR_SIZE)
-	//n1, err5 := diskReaderWriter.Read(buf2)
-	//fmt.Printf("Read byte n = %d\n", n1)
-	//fmt.Println(buf2)
-	//fmt.Println(err5)
-
 
 	diskReaderWriter.Close()
 }

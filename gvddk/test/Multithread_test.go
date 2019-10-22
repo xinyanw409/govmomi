@@ -1,11 +1,11 @@
 package main
 
 import (
+	"../../gvddk/gDiskLib"
+	"../../gvddk/gvddk-high"
 	"fmt"
-	"testing"
 	"github.com/sirupsen/logrus"
-	"github.com/vmware/govmomi/gvddk/gDiskLib"
-	"github.com/vmware/govmomi/gvddk/gvddk-high"
+	"testing"
 )
 
 // II vs II
@@ -176,7 +176,7 @@ func TestMiss2(t *testing.T) {
 	diskReaderWriter.Close()
 }
 
-//I II vs II III
+// I II vs II III
 func TestMiss3(t *testing.T) {
 	//t.Parallel()
 	fmt.Println("Test Multithread write for miss aligned case which lock: I II vs II III")

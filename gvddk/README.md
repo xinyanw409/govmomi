@@ -172,6 +172,7 @@ func Open(globalParams gDiskLib.ConnectParams, logger logrus.FieldLogger)
  * the number of bytes read (0 <= n <= len(p)) and 
  * any error encountered.
  */
+func (this DiskReaderWriter) Read(p []byte) (n int, err error) {}
 ```
 ### ReadAt
 ```$xslt

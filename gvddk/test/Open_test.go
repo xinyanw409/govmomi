@@ -1,8 +1,8 @@
 package main
 
 import (
-	"../../gvddk/gDiskLib"
-	"../../gvddk/gvddk-high"
+	"github.com/vmware/govmomi/gvddk/gDiskLib"
+	"github.com/vmware/govmomi/gvddk/gvddk-high"
 	"fmt"
 	"github.com/sirupsen/logrus"
 	"testing"

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"../../gvddk/gDiskLib"
+	"github.com/vmware/govmomi/gvddk/gDiskLib"
 	"testing"
 )
 

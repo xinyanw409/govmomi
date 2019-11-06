@@ -8,30 +8,18 @@ Gvddk is a Golang wrapper to access the VMware Virtual Disk Development Kit API 
 User can choose to either use main functionality via high level api, or use low level api to implement his own function combination.
 
 # Dependency
-Gvddk needs vddk library, which is under gvddk/lib/vmware-vix-disklib/lib64. All required libraries are listed below:
-* libcryto.so libcryto.so.1 libcryto.so.1.0.2
-* libcurl.so libcurl.so.4
-* libexpat.so
-* libffi.so libffi.so.5
-* libgxc_s.so libgxc_s.so.1
-* libglib-2.0.so libglib-2.0.so.0
-* libglib-2.0.so libgmodule-2.0.so.0
-* libgmodule-2.0.so libgobject-2.0.so.0
-* libgthread-2.0.so libgthread-2.0.so.0
-* libsqlite3.so libsqlite3.so.0 libsqlite3.so.0.8.6
-* libssl.so libssl.so.1 libssl.so.1.0.2
-* libssoclient.so
-* libstdc++.so libstdc++.so.6
-* libxml2.so libxml2.so.2
-* libz.so libz.so.1
-* libdiskLibPlugin.so
-* libgvmomi.so
-* libvim-types.so
-* libvixDiskLib.so libvixDiskLib.so.6 libvixDiskLib.so.6.7.0
-* libvixDiskLibVim.so libvixDiskLibVim.so.6 libvixDiskLibVim.so.6.7.0
-* libvixMntapi.so libvixMntapi.so.1 libvixMntapi.so.1.1.0
-* libvmacore.so
-* libvmomi.so
+Gvddk needs vddk library, which is under gvddk/lib/vmware-vix-disklib/lib64. All required linux libraries packages are listed below:
+* libc6
+* libcurl3/libcurl4-openssl-dev
+* libexpat1-dev
+* libffi6
+* libgcc1
+* libglib2.0-0
+* libsqlite3-0
+* libssl1.0.0
+* libstdc++6
+* libxml2
+* zlib1g
 
 # Use cases
 The Gvddk provides access to virtual disks, enabling a range of use cases for application vendors including:

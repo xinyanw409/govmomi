@@ -36,6 +36,13 @@ const (
 	VIXDISKLIB_FLAG_OPEN_COMPRESSION_MASK = C.VIXDISKLIB_FLAG_OPEN_COMPRESSION_MASK
 )
 
+// Transport mode
+const (
+	NBD = "nbd"
+	NBDSSL = "nbdssl"
+	HOTADD = "hotadd"
+)
+
 // Sector size
 const VIXDISKLIB_SECTOR_SIZE = C.VIXDISKLIB_SECTOR_SIZE
 

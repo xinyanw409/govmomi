@@ -9,6 +9,9 @@ import (
 func TestCreate(t *testing.T) {
 	// Set up
 	path := os.Getenv("LIBPATH")
+	if path == "" {
+		t.Skip("Skipping testing if environment variables are not set.")
+	}
 	res := gDiskLib.Init(6, 7, path)
 	if res != nil {
 		t.Errorf("Init failed, got error code: %d, error message: %s.", res.VixErrorCode(), res.Error())

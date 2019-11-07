@@ -15,6 +15,9 @@ func TestAligned(t *testing.T) {
 	var majorVersion uint32 = 6
 	var minorVersion uint32 = 7
 	path := os.Getenv("LIBPATH")
+	if path == "" {
+		t.Skip("Skipping testing if environment variables are not set.")
+	}
 	gDiskLib.Init(majorVersion, minorVersion, path)
 	serverName := os.Getenv("IP")
 	thumPrint := os.Getenv("THUMBPRINT")
@@ -76,6 +79,9 @@ func TestMiss1(t *testing.T) {
 	var majorVersion uint32 = 6
 	var minorVersion uint32 = 7
 	path := os.Getenv("LIBPATH")
+	if path == "" {
+		t.Skip("Skipping testing if environment variables are not set.")
+	}
 	gDiskLib.Init(majorVersion, minorVersion, path)
 	serverName := os.Getenv("IP")
 	thumPrint := os.Getenv("THUMBPRINT")
@@ -137,6 +143,9 @@ func TestMiss2(t *testing.T) {
 	var majorVersion uint32 = 6
 	var minorVersion uint32 = 7
 	path := os.Getenv("LIBPATH")
+	if path == "" {
+		t.Skip("Skipping testing if environment variables are not set.")
+	}
 	gDiskLib.Init(majorVersion, minorVersion, path)
 	serverName := os.Getenv("IP")
 	thumPrint := os.Getenv("THUMBPRINT")
@@ -198,6 +207,9 @@ func TestMiss3(t *testing.T) {
 	var majorVersion uint32 = 6
 	var minorVersion uint32 = 7
 	path := os.Getenv("LIBPATH")
+	if path == "" {
+		t.Skip("Skipping testing if environment variables are not set.")
+	}
 	gDiskLib.Init(majorVersion, minorVersion, path)
 	serverName := os.Getenv("IP")
 	thumPrint := os.Getenv("THUMBPRINT")
@@ -259,6 +271,9 @@ func TestMissAlign(t *testing.T) {
 	var majorVersion uint32 = 6
 	var minorVersion uint32 = 7
 	path := os.Getenv("LIBPATH")
+	if path == "" {
+		t.Skip("Skipping testing if environment variables are not set.")
+	}
 	gDiskLib.Init(majorVersion, minorVersion, path)
 	serverName := os.Getenv("IP")
 	thumPrint := os.Getenv("THUMBPRINT")

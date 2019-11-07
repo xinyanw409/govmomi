@@ -11,6 +11,9 @@ func TestGetThumbPrintForServer(t *testing.T) {
 	host := os.Getenv("HOST")
 	port := os.Getenv("PORT")
 	vmwareThumbprint := os.Getenv("THUMBPRINT")
+	if vmwareThumbprint == "" {
+		t.Skip("Skipping testing if environment variables are not set.")
+	}
 	thumbprint, err := gDiskLib.GetThumbPrintForServer(host, port)
 	if err != nil {
 		t.Errorf("Thumbprint for %s:%s failed, err = %s\n", host, port, err)

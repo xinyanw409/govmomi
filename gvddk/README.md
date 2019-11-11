@@ -8,15 +8,17 @@ Gvddk is a Golang wrapper to access the VMware Virtual Disk Development Kit API 
 User can choose to either use main functionality via high level api, or use low level api to implement his own function combination.
 
 # Dependency
-Gvddk needs vddk library, which is under gvddk/lib/vmware-vix-disklib/lib64. All required linux libraries packages are listed below:
+Gvddk needs vddk library, which is under gvddk/lib/vmware-vix-disklib/lib64. Required linux libraries packages are listed below:
 * libc6
-* libcurl3/libcurl4-openssl-dev
+* libssl1.0.2
+* libssl1.0.0
+* libssl-dev
+* libcurl3
 * libexpat1-dev
 * libffi6
 * libgcc1
 * libglib2.0-0
 * libsqlite3-0
-* libssl1.0.0
 * libstdc++6
 * libxml2
 * zlib1g

@@ -231,25 +231,6 @@ func CreateChild(diskHandle VixDiskLibHandle, childPath string, diskType VixDisk
 	return nil
 }
 
-func FreeErrorText(vixErrorMsg string) {
-	errorMsg := C.CString(vixErrorMsg)
-	defer C.free(unsafe.Pointer(errorMsg))
-	C.VixDiskLib_FreeErrorText(errorMsg)
-}
-
-func FreeInfo(diskInfo *VixDiskLibInfo) {
-	dliInfo, toFree := createDiskInfo(diskInfo)
-	defer freeParams(toFree)
-	C.VixDiskLib_FreeInfo(dliInfo)
-}
-
-func GetErrorText(error VddkError, locale string) string {
-	lc := C.CString(locale)
-	defer C.free(unsafe.Pointer(lc))
-	res := C.VixDiskLib_GetErrorText(C.VixError(error.VixErrorCode()), lc)
-	return C.GoString(res)
-}
-
 func createDiskInfo(diskInfo *VixDiskLibInfo) (*C.VixDiskLibInfo, []*C.char) {
 	var dliInfo *C.VixDiskLibInfo
 	var bios C.VixDiskLibGeometry
@@ -269,16 +250,6 @@ func createDiskInfo(diskInfo *VixDiskLibInfo) (*C.VixDiskLibInfo, []*C.char) {
 	dliInfo.uuid = C.CString(diskInfo.uuid)
 	var cParams = []*C.char{dliInfo.parentFileNameHint, dliInfo.uuid}
 	return dliInfo, cParams
-}
-
-func GetInfo(handle VixDiskLibHandle, diskInfo *VixDiskLibInfo) VddkError {
-	dliInfo, toFree := createDiskInfo(diskInfo)
-	defer freeParams(toFree)
-	res := C.GetInfo(handle.dli, dliInfo)
-	if res != 0 {
-		return NewVddkError(uint64(res), fmt.Sprintf("GetInfo failed. The error code is %d.", res))
-	}
-	return nil
 }
 
 func Grow(connection VixDiskLibConnection, path string, capacity VixDiskLibSectorType, updateGeometry bool, callbackData string) VddkError {

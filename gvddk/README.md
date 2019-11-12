@@ -9,6 +9,8 @@ User can choose to either use main functionality via high level api, or use low 
 
 # Dependency
 Gvddk needs vddk library, which is under gvddk/lib/vmware-vix-disklib/lib64. Required linux libraries packages are listed below:
+
+Ubuntu:
 * libc6
 * libssl1.0.2
 * libssl1.0.0
@@ -22,6 +24,18 @@ Gvddk needs vddk library, which is under gvddk/lib/vmware-vix-disklib/lib64. Req
 * libstdc++6
 * libxml2
 * zlib1g
+
+Centos:
+* openssl-libs
+* libcurl
+* expat-devel
+* libffi 
+* libgcc 
+* glib2 
+* sqlite
+* libstdc++
+* libxml2
+* zlib
 
 # Use cases
 The Gvddk provides access to virtual disks, enabling a range of use cases for application vendors including:
